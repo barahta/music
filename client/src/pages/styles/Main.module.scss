@@ -1,0 +1,134 @@
+.bodymain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Montserrat";
+  background-color: #F1F1F1;
+  .container{
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+      color: #454545;
+      font-weight: 800;
+      font-size: 32px;
+      position: sticky;
+      top: 0;
+
+      .tooth{
+        width: 500px;
+        height: 80px;
+        margin-left: -150px;
+      }
+      .left{
+        margin-left: -450px;
+        margin-right: 25px;
+        margin-top: -40px;
+      }
+      .right{
+        margin-left: 25px;
+        margin-top: -40px;
+      }
+    }
+
+    .engtitle{
+      display: flex;
+      width: calc(100% - 60px);
+      padding: 30px;
+      justify-content: space-between;
+      margin-top: -50px;
+      .text{
+        color: rgba(0,0,0,0.2);
+        font-size: 250px;
+        font-weight: 800;
+        width: calc(70% - 90px);
+        padding: 30px 30px 30px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .line{
+
+        }
+        .linedown{
+          margin-top: -90px;
+        }
+      }
+      .logo{
+        width: calc(70% - 120px);
+        padding: 30px 30px 30px 90px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+
+    .rutitle{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #606060;
+      font-size: 158px;
+      font-weight: 800;
+      margin-top: -50px;
+    }
+    .more{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 670px;
+        height: 130px;
+        background-color: rgba(0,0,0,0);
+        border: 2px solid #454545;
+        color: #454545;
+        font-size: 40px;
+        font-weight: 400;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: 0.2s;
+      }
+      .btn:hover{
+        background-color: #494949;
+        color: #FFF;
+        border: 2px solid #494949;
+        transition: 0.2s;
+      }
+    }
+
+    .portfolio{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-weight: 400;
+      margin-top: 20px;
+      .eng{
+        margin-right: 25px;
+        color: #606060;
+      }
+      .rus{
+        margin-left: 25px;
+        color: #CCC;
+      }
+    }
+
+  }
+
+
+}
