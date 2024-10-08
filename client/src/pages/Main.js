@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 import Header from '../components/header/Header'
 import Singers from "../components/singers/Singers";
-
+import FooterBlock from "../components/footer/Footer";
 
 function Main () {
 
@@ -16,6 +16,7 @@ function Main () {
                     <Singers />
                 </div>
             </div>
+            <FooterBlock />
         </div>
     )
 }
