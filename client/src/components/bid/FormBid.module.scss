@@ -1,0 +1,364 @@
+@media screen and (min-width: 1550px){
+  .main{
+    width: calc(100% - 60px);
+    max-width: 700px;
+    height: calc(100% - 60px);
+    padding: 30px;
+    background-color: rgba(255,255,255,0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    .cap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .title{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 30pt;
+        font-weight: 600;
+      }
+      .desc{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #454545;
+        font-size: 20pt;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      .title{
+        margin-top: 20px;
+        width: 90%;
+        font-size: 20pt;
+      }
+      .line{
+        width: calc(90% - 40px);
+        margin-top: 10px;
+        padding: 10px 20px;
+        height: 40px;
+        outline: none;
+        border: 4px solid #B784FC;
+        font-size: 14pt;
+        background-color: rgba(255,255,255,0);
+      }
+      .storyblock{
+        width: 90%;
+        .title{}
+        .text{
+          width: calc(100% - 44px);
+          height: 200px;
+          margin-top: 10px;
+          padding: 10px 20px;
+          outline: none;
+          border: 4px solid #B784FC;
+          font-size: 14pt;
+          background-color: rgba(255,255,255,0);
+          resize: none;
+        }
+
+      }
+      .btn{
+        padding: 30px 70px;
+        color: #FFFFFF;
+        margin-top: 70px;
+        background-color: #B784FC;
+        font-size: 20pt;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-bottom: 50px;
+        border: none;
+      }
+      .btn:hover{
+        background-color: rgba(183,132,252,0.8);
+        transition: 0.2s;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1100px) and (max-width: 1550px){
+  .main{
+    width: calc(100% - 60px);
+    max-width: 700px;
+    height: calc(100% - 60px);
+    padding: 30px;
+    background-color: rgba(255,255,255,0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    .cap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .title{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 30pt;
+        font-weight: 600;
+      }
+      .desc{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #454545;
+        font-size: 20pt;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      .title{
+        margin-top: 20px;
+        width: 90%;
+        font-size: 20pt;
+      }
+      .line{
+        width: calc(90% - 40px);
+        margin-top: 10px;
+        padding: 10px 20px;
+        height: 40px;
+        outline: none;
+        border: 4px solid #B784FC;
+        font-size: 14pt;
+        background-color: rgba(255,255,255,0);
+      }
+      .storyblock{
+        width: 90%;
+        .title{}
+        .text{
+          width: calc(100% - 44px);
+          height: 200px;
+          margin-top: 10px;
+          padding: 10px 20px;
+          outline: none;
+          border: 4px solid #B784FC;
+          font-size: 14pt;
+          background-color: rgba(255,255,255,0);
+          resize: none;
+        }
+
+      }
+      .btn{
+        padding: 30px 70px;
+        color: #FFFFFF;
+        margin-top: 70px;
+        background-color: #B784FC;
+        font-size: 20pt;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-bottom: 50px;
+        border: none;
+      }
+      .btn:hover{
+        background-color: rgba(183,132,252,0.8);
+        transition: 0.2s;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1100px){
+  .main{
+    width: calc(100% - 60px);
+    max-width: 700px;
+    height: calc(100% - 60px);
+    padding: 30px;
+    background-color: rgba(255,255,255,0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    .cap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .title{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 30pt;
+        font-weight: 600;
+      }
+      .desc{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #454545;
+        font-size: 20pt;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      .title{
+        margin-top: 20px;
+        width: 90%;
+        font-size: 20pt;
+      }
+      .line{
+        width: calc(90% - 40px);
+        margin-top: 10px;
+        padding: 10px 20px;
+        height: 40px;
+        outline: none;
+        border: 4px solid #B784FC;
+        font-size: 14pt;
+        background-color: rgba(255,255,255,0);
+      }
+      .storyblock{
+        width: 90%;
+        .title{}
+        .text{
+          width: calc(100% - 44px);
+          height: 200px;
+          margin-top: 10px;
+          padding: 10px 20px;
+          outline: none;
+          border: 4px solid #B784FC;
+          font-size: 14pt;
+          background-color: rgba(255,255,255,0);
+          resize: none;
+        }
+
+      }
+      .btn{
+        padding: 30px 70px;
+        color: #FFFFFF;
+        margin-top: 70px;
+        background-color: #B784FC;
+        font-size: 20pt;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-bottom: 100px;
+        border: none;
+      }
+      .btn:hover{
+        background-color: rgba(183,132,252,0.8);
+        transition: 0.2s;
+      }
+    }
+  }
+}
+@media screen and (min-width: 100px) and (max-width: 600px){
+  .main{
+    width: calc(100% - 20px);
+    max-width: 700px;
+    height: calc(100% - 60px);
+    padding: 30px 10px;
+    background-color: rgba(255,255,255,0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    .cap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .title{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 26pt;
+        font-weight: 600;
+      }
+      .desc{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #454545;
+        font-size: 16pt;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      .title{
+        margin-top: 20px;
+        width: 90%;
+        font-size: 20pt;
+      }
+      .line{
+        width: calc(90% - 40px);
+        margin-top: 10px;
+        padding: 10px 20px;
+        height: 40px;
+        outline: none;
+        border: 4px solid #B784FC;
+        font-size: 14pt;
+        background-color: rgba(255,255,255,0);
+      }
+      .storyblock{
+        width: 90%;
+        .title{}
+        .text{
+          width: calc(100% - 44px);
+          height: 200px;
+          margin-top: 10px;
+          padding: 10px 20px;
+          outline: none;
+          border: 4px solid #B784FC;
+          font-size: 14pt;
+          background-color: rgba(255,255,255,0);
+          resize: none;
+        }
+
+      }
+      .btn{
+        padding: 30px 70px;
+        color: #FFFFFF;
+        margin-top: 70px;
+        background-color: #B784FC;
+        font-size: 20pt;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-bottom: 100px;
+        border: none;
+      }
+      .btn:hover{
+        background-color: rgba(183,132,252,0.8);
+        transition: 0.2s;
+      }
+    }
+  }
+}

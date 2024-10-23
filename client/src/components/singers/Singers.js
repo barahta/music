@@ -1,31 +1,98 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import style from './Singers.module.scss';
-
+import OpenSinger from "./OpenSinger";
+import { DataContext } from '../../context/DataContext';
+import BigModal from "../modalwin/BigModal";
+import FormBid from "../bid/FormBid";
+import { DataProvider } from '../../context/DataContext';
 function Singers() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
+    const [sliderVisible, setSliderVisible] = useState(false);
+    const [titleVisible, setTitleVisible] = useState(false);
+    const [rootMargin, setRootMargin] = useState('0px 0px 500px 0px'); // Устанавливаем rootMargin в зависимости от ширины экрана
+    const [wind, setWind] = useState(window.innerWidth);
 
-    const singers = [
-        { name: 'Фамилия Имя', cover: '1.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '4.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '8.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '2.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '5.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '6.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '7.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '3.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '15.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '12.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '11.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '10.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '13.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '14.webp', music: '1.mp3' },
-        { name: 'Фамилия Имя', cover: '9.webp', music: '1.mp3' },
-    ];
 
-    const visibleSlides = 3; // Количество видимых слайдов
-    const slideWidth = 400; // Ширина одного слайда в пикселях, корректируем ширину
-    const totalSlides = singers.length; // Всего слайдов
+    const sliderRef = useRef(null);
+    const titleRef = useRef(null);
+    const {sings} = useContext(DataContext)
+    console.log(sings)
+    const singers = sings
+
+    let visibleSlides; // Количество видимых слайдов
+    let slideWidth; // Ширина одного слайда в пикселях
+    if (window.innerWidth <= 500) {
+        slideWidth = 100 // Меньше 500px
+        visibleSlides = 1
+    } else {
+        slideWidth = 400 // Больше 500px
+        visibleSlides = 3
+    }
+
+     // Всего слайдов
+    let totalSlides = 0
+    if(singers){
+         totalSlides = singers.length
+    }else{
+         totalSlides = 0
+    }
+    // Изменяем rootMargin в зависимости от ширины экрана
+    useEffect(() => {
+        const updateRootMargin = () => {
+                setRootMargin('0px 0px 500px 0px'); // Больше 500px
+        };
+
+        updateRootMargin(); // Устанавливаем значение при монтировании
+        window.addEventListener('resize', updateRootMargin); // Добавляем слушатель события
+
+        return () => {
+            window.removeEventListener('resize', updateRootMargin); // Убираем слушатель при размонтировании
+        };
+    }, []);
+    useEffect(()=>{
+        setWind(window.innerWidth)
+    }, [window.innerWidth])
+    // Intersection Observer для отслеживания появления блоков
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin, // Используем динамическое значение rootMargin
+            threshold: 0.1,
+        };
+
+        const sliderObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setSliderVisible(true);
+                }
+            });
+        }, observerOptions);
+
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setTitleVisible(true);
+                }
+            });
+        }, observerOptions);
+
+        if (sliderRef.current) {
+            sliderObserver.observe(sliderRef.current);
+        }
+        if (titleRef.current) {
+            titleObserver.observe(titleRef.current);
+        }
+
+        return () => {
+            if (sliderRef.current) {
+                sliderObserver.unobserve(sliderRef.current);
+            }
+            if (titleRef.current) {
+                titleObserver.unobserve(titleRef.current);
+            }
+        };
+    }, [rootMargin]); // Обновляем наблюдателей, если rootMargin изменяется
 
     // Автоматическое листание
     useEffect(() => {
@@ -48,34 +115,46 @@ function Singers() {
         );
     };
 
+    const [activemodal, setActivemodal] = useState(false);
+    const [activeform, setActiveform] = useState(false);
+    const [man, setMan] = useState({ music: [{ url: '' }] });
+
     return (
         <div className={style.main}>
-            <div className={style.title}>Артисты</div>
+            <BigModal data={<OpenSinger man={man} cover={man.cover} active={activemodal}/>} activemodal={activemodal} setActivemodal={setActivemodal} setData={setMan} />
+            <BigModal data={<FormBid setActivemodal={setActiveform} active={activeform}/>} activemodal={activeform} setActivemodal={setActiveform}/>
+            <div className={`${style.title}`} ref={titleRef}>
+                Артисты
+            </div>
             <div
-                className={style.slider}
+                ref={sliderRef}
+                className={`${style.slider} ${sliderVisible ? style.visibleFromBottom : ''}`}
                 onMouseEnter={() => setIsPaused(true)} // Останавливаем автоперелистывание при наведении
                 onMouseLeave={() => setIsPaused(false)} // Возвращаем автоперелистывание при уходе мышки
             >
                 <div className={style.listblock}>
                     <div
                         className={style.slidesContainer}
-                        style={{
+                        style={(wind >= 500)?{
                             transform: `translateX(-${currentIndex * (slideWidth + 130)}px)`, // Смещение слайдов
                             transition: 'transform 0.5s ease', // Плавное перелистывание
                             width: `${totalSlides * (slideWidth + 50)}px`, // Общая ширина контейнера
+                        }:{
+                            transform: `translateX(-${currentIndex * (slideWidth + 0)}px)`, // Смещение слайдов
+                            transition: 'transform 0.5s ease', // Плавное перелистывание
+                            width: `${totalSlides * (slideWidth + 10)}px`, // Общая ширина контейнера
                         }}
                     >
                         {singers.map((singer, i) => (
-                            <div className={style.singer} key={i} style={{ width: `${slideWidth}px` }}>
+                            <div className={style.singer} key={i} style={{ width: `${slideWidth}px` }} onClick={() => { setActivemodal(true); setMan(singer); }}>
                                 <div
                                     className={style.cover}
-                                    style={{ backgroundImage: `url('/files/music/${singer.cover}')` }}
-                                >
-                                    <i className="fa-solid fa-play"></i>
-                                </div>
+                                    style={{ backgroundImage: `url('/files/singers/${singer.cover}')` }}
+                                ></div>
                                 <div className={style.name}>{singer.name}</div>
                             </div>
                         ))}
+                        <div className={style.more}>Здесь можешь быть ты</div>
                     </div>
                 </div>
                 <div className={style.tumbler}>
@@ -86,6 +165,10 @@ function Singers() {
                         <i className="fa-solid fa-angles-right"></i>
                     </div>
                 </div>
+            </div>
+            <div className={style.bid}>
+                <div className={style.text}>В этом списке можешь быть и ты, присылай нам свое демо!</div>
+                <div className={style.btn} onClick={() => setActiveform(true)}>Отправить</div>
             </div>
         </div>
     );

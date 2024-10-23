@@ -1,0 +1,776 @@
+.main{
+  z-index: 50;
+}
+@media screen and (min-width: 1350px){
+  .main{
+    width: 100%;
+    height: 200px;
+    max-height: 1080px;
+    background: linear-gradient(to right, #6C305B, #070B27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .menumobile{
+      display: none;
+    }
+
+    .container{
+      width: 100%;
+      max-width: 1920px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .backmain{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        z-index: 0;
+      }
+      .content{
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 100px 50px 100px;
+        width: calc(100% - 150px);
+        height: calc(100% - 100px);
+
+        .nav{
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #FFFFFF;
+
+          .linker{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - 150px);
+            .musiclogo{
+              height: 100px;
+            }
+            .link{
+              font-size: 30pt;
+              cursor: pointer;
+              color: #FFFFFF;
+            }
+            .link:hover{
+              text-shadow: 0px 0px 10px rgba(255, 0, 99, 1);
+              filter: blur(1px);
+            }
+          }
+          .burger{
+            width: 70px;
+            height: 40px;
+            margin-left: 20px;
+            display: none;
+            .box{
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+
+              .slash{
+                width: 100%;
+                height: 2px;
+                background-color: #FFFFFF;
+              }
+            }
+
+          }
+        }
+        .logos{
+          width: 100%;
+          height: calc(100% - 300px);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+          .omedialogo{
+            height: 27%;
+          }
+
+        }
+        .title{
+          width: 100%;
+          height: 80px;
+          border: 3px solid #FFFFFF;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30pt;
+          font-weight: 600;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 1350px){
+  .main{
+    width: 100%;
+    height: 200px;
+    max-height: 1080px;
+    background: linear-gradient(to right, #6C305B, #070B27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .menumobile{
+      width: 100%;
+      height: calc(100vh - 200px);
+      position: fixed;
+      top: 200px;
+      background-color: rgba(0,0,0,0.8);
+      text-decoration: none;
+      color: #FFFFFF;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-height: 1px;
+      opacity: 0;
+      margin-bottom: -50%;
+      transition: 0.3s ease-in-out;
+      z-index: 200;
+      font-size: 0px;
+      .up {
+
+      }
+
+      .rightpart {
+        width: 100%;
+        //max-height: 100vh;
+        //max-height: 1080px;
+        //background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        .board{
+          display: flex;
+          //flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: 100%;
+          max-width: calc(1920px / 2);
+          //height: 100vh;
+          //max-height: 1080px;
+          margin-top: -50px;
+          .btn {
+            width: calc(50% - 21px);
+            height: 150px;
+            //border-bottom: 1px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+            position: relative;
+            font-size: 20pt;
+            font-weight: 200;
+            //border: 1px solid #FFFFFF;
+            //border-bottom: none;
+            //border-top: none;
+            //outline: 1px solid #FFFFFF;
+            margin-left: -1px;
+            text-align: center;
+            color: #FFFFFF;
+
+            .border{
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              z-index: 300;
+              //height: 1px;
+              background-color: #FFFFFF;
+
+              transition: 0.5s ease-in-out;
+              color: #FFFFFF;
+            }
+          }
+          .left{
+            border-right: 1px solid #ffffff;
+          }
+          .down{
+            border-bottom: 1px solid #fff;
+          }
+          .btn:hover{
+
+            transition: 0.5s ease-in-out;
+
+            position: relative;
+            .border{
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background-color: #AE57FF;
+              transition: 0.5s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+    .container{
+      width: 100%;
+      max-width: 1920px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .backmain{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        z-index: 0;
+      }
+      .content{
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 100px 50px 100px;
+        width: calc(100% - 150px);
+        height: calc(100% - 100px);
+
+        .nav{
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #FFFFFF;
+
+          .linker{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - 150px);
+            .musiclogo{
+              height: 100px;
+            }
+            .link{
+              display: none;
+              font-size: 30pt;
+              cursor: pointer;
+              color: #FFFFFF;
+            }
+            .link:hover{
+              text-shadow: 0px 0px 10px rgba(255, 0, 99, 1);
+              filter: blur(1px);
+            }
+          }
+          .burger{
+            width: 70px;
+            height: 40px;
+            margin-left: 20px;
+
+            display: block;
+            .box{
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+
+              .slash{
+                width: 100%;
+                height: 2px;
+                background-color: #FFFFFF;
+              }
+            }
+
+          }
+        }
+        .logos{
+          width: 100%;
+          height: calc(100% - 300px);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+          .omedialogo{
+            height: 27%;
+          }
+
+        }
+        .title{
+          width: 100%;
+          height: 80px;
+          border: 3px solid #FFFFFF;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30pt;
+          font-weight: 600;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (min-width: 470px) and (max-width: 550px){
+  .main{
+    width: 100%;
+    height: 150px;
+    max-height: 1080px;
+    background: linear-gradient(to right, #6C305B, #070B27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .menumobile{
+      width: 100%;
+      height: calc(100vh - 141px);
+      position: fixed;
+      top: 141px;
+      background-color: rgba(0,0,0,0.8);
+      text-decoration: none;
+      color: #FFFFFF;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-height: 1px;
+      opacity: 0;
+      margin-bottom: -50%;
+      transition: 0.3s ease-in-out;
+      z-index: 200;
+      font-size: 0px;
+      .up {
+
+      }
+
+      .rightpart {
+        width: 100%;
+        //max-height: 100vh;
+        //max-height: 1080px;
+        //background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 50px;
+        .board{
+          display: flex;
+          //flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: 100%;
+          max-width: calc(1920px / 2);
+          //height: 100vh;
+          //max-height: 1080px;
+          margin-top: -50px;
+          .btn {
+            width: calc(50% - 21px);
+            height: 150px;
+            //border-bottom: 1px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+            position: relative;
+            font-size: 20pt;
+            font-weight: 200;
+            //border: 1px solid #FFFFFF;
+            //border-bottom: none;
+            //border-top: none;
+            //outline: 1px solid #FFFFFF;
+            margin-left: -1px;
+            text-align: center;
+            color: #FFFFFF;
+
+            .border{
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              z-index: 300;
+              //height: 1px;
+              background-color: #FFFFFF;
+
+              transition: 0.5s ease-in-out;
+              color: #FFFFFF;
+            }
+          }
+          .left{
+            border-right: 1px solid #ffffff;
+          }
+          .down{
+            border-bottom: 1px solid #fff;
+          }
+          .btn:hover{
+
+            transition: 0.5s ease-in-out;
+
+            position: relative;
+            .border{
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background-color: #AE57FF;
+              transition: 0.5s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+    .container{
+      width: 100%;
+      max-width: 1920px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .backmain{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        z-index: 0;
+      }
+      .content{
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 100px 50px 100px;
+        width: calc(100% - 150px);
+        height: calc(100% - 100px);
+
+        .nav{
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #FFFFFF;
+
+          .linker{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - 150px);
+            .musiclogo{
+              height: 70px;
+            }
+            .link{
+              display: none;
+              font-size: 30pt;
+              cursor: pointer;
+              color: #FFFFFF;
+            }
+            .link:hover{
+              text-shadow: 0px 0px 10px rgba(255, 0, 99, 1);
+              filter: blur(1px);
+            }
+          }
+          .burger{
+            width: 70px;
+            height: 40px;
+            margin-left: 20px;
+
+            display: block;
+            .box{
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+
+              .slash{
+                width: 100%;
+                height: 2px;
+                background-color: #FFFFFF;
+              }
+            }
+
+          }
+        }
+        .logos{
+          width: 100%;
+          height: calc(100% - 300px);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+          .omedialogo{
+            height: 27%;
+          }
+
+        }
+        .title{
+          width: 100%;
+          height: 80px;
+          border: 3px solid #FFFFFF;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30pt;
+          font-weight: 600;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (min-width: 100px) and (max-width: 470px){
+  .main{
+    width: 100%;
+    height: 150px;
+    max-height: 1080px;
+    background: linear-gradient(to right, #6C305B, #070B27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .menumobile{
+      width: 100%;
+      height: calc(100vh - 141px);
+      position: fixed;
+      top: 141px;
+      left: 0;
+      background-color: rgba(0,0,0,0.8);
+      text-decoration: none;
+      color: #FFFFFF;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-height: 1px;
+      opacity: 0;
+      margin-bottom: -50%;
+      transition: 0.3s ease-in-out;
+      z-index: 200;
+      font-size: 0px;
+      .up {
+
+      }
+
+      .rightpart {
+        width: 100%;
+        //max-height: 100vh;
+        //max-height: 1080px;
+        //background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 50px;
+        .board{
+          display: flex;
+          //flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: 100%;
+          max-width: calc(1920px / 2);
+          //height: 100vh;
+          //max-height: 1080px;
+          margin-top: -50px;
+          .btn {
+            width: calc(50% - 21px);
+            height: 150px;
+            //border-bottom: 1px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+            position: relative;
+            font-size: 14pt;
+            font-weight: 200;
+            //border: 1px solid #FFFFFF;
+            //border-bottom: none;
+            //border-top: none;
+            //outline: 1px solid #FFFFFF;
+            margin-left: -1px;
+            text-align: center;
+            color: #FFFFFF;
+            word-break: break-all;
+            .border{
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              z-index: 300;
+              //height: 1px;
+              background-color: #FFFFFF;
+
+              transition: 0.5s ease-in-out;
+              color: #FFFFFF;
+            }
+          }
+          .left{
+            border-right: 1px solid #ffffff;
+          }
+          .down{
+            border-bottom: 1px solid #fff;
+          }
+          .btn:hover{
+
+            transition: 0.5s ease-in-out;
+
+            position: relative;
+            .border{
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background-color: #AE57FF;
+              transition: 0.5s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+    .container{
+      width: 100%;
+      max-width: 1920px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .backmain{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        z-index: 0;
+      }
+      .content{
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 30px 50px 30px;
+        width: calc(100% - 60px);
+        height: calc(100% - 100px);
+
+        .nav{
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #FFFFFF;
+
+          .linker{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - 50px);
+            .musiclogo{
+              height: 70px;
+            }
+            .link{
+              display: none;
+              font-size: 30pt;
+              cursor: pointer;
+              color: #FFFFFF;
+            }
+            .link:hover{
+              text-shadow: 0px 0px 10px rgba(255, 0, 99, 1);
+              filter: blur(1px);
+            }
+          }
+          .burger{
+            width: 70px;
+            height: 40px;
+            margin-left: 20px;
+
+            display: block;
+            .box{
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+
+              .slash{
+                width: 100%;
+                height: 2px;
+                background-color: #FFFFFF;
+              }
+            }
+
+          }
+        }
+        .logos{
+          width: 100%;
+          height: calc(100% - 300px);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+          .omedialogo{
+            height: 27%;
+          }
+
+        }
+        .title{
+          width: 100%;
+          height: 80px;
+          border: 3px solid #FFFFFF;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30pt;
+          font-weight: 600;
+        }
+      }
+    }
+
+  }
+}

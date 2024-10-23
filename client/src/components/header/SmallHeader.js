@@ -1,0 +1,63 @@
+import style from './SmallHeader.module.scss'
+import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+
+function SmallHeader (){
+
+    const [openburger, setOpenburger] = useState(false)
+
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        if(openburger===true){
+            document.body.style.position = 'fixed'
+            document.body.style.top = '0px'
+            document.body.style.left = '0px'
+            document.body.style.width = '100%'
+        }else{
+            document.body.style.position = 'relative'
+            document.body.style.top = '0px'
+        }
+    }, [openburger]);
+    return(
+        <div className={style.main}>
+            <div className={style.menumobile} style={(openburger)?{maxHeight:'100%', opacity: '1', marginTop: '0px', display:'flex'}:{}}>
+
+                <div className={style.rightpart}>
+                    <div className={style.board}>
+                        <Link to="/about" className={`${style.btn} ${style.left} ${style.down}`}>О НАС<div className={style.border}></div>
+                        </Link>
+                        {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
+                        <Link to='/singers' className={`${style.btn} ${style.right} ${style.down}`}>АРТИСТЫ<div className={style.border}></div></Link>
+                        <Link to='/scope' className={`${style.btn} ${style.left}`}>ВОЗМОЖНОСТИ<div className={style.border}></div></Link>
+                        {/*<Link to='/vakansii' className={`${style.btn} ${style.right}`}>Вакансии<div className={style.border}></div></Link>*/}
+                    </div>
+                </div>
+                <div className={style.up}></div>
+            </div>
+            <div className={style.container}>
+                <div className={style.backmain}></div>
+                <div className={style.content}>
+                    <div className={style.nav}>
+                        <div className={style.linker}>
+                            <Link to='/'><img src="/files/omediamusic.svg" className={style.musiclogo}/></Link>
+                            <Link to='/about' className={style.link}>О НАС</Link>
+                            <Link to='/singers' className={style.link}>АРТИСТЫ</Link>
+                            <Link to='/scope' className={style.link}>ВОЗМОЖНОСТИ</Link>
+                        </div>
+                        <div className={style.burger}>
+                            <div className={style.box} onClick={()=>setOpenburger(!openburger)}>
+                                <div className={style.slash}></div>
+                                <div className={style.slash}></div>
+                                <div className={style.slash}></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default SmallHeader

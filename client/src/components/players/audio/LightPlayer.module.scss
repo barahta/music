@@ -1,0 +1,64 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #282c34;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 300px;
+}
+
+.trackInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .trackImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+
+  .trackName {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .trackAutor {
+    font-size: 14px;
+    color: #bbb;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .controlButton {
+    background: none;
+    border: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    cursor: pointer;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+}
+
+.timeline {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .timelineRange {
+    width: 100%;
+  }
+}

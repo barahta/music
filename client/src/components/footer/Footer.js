@@ -13,23 +13,24 @@ function FooterBlock (){
                         <div className={style.line}>Terms & Condition</div>
                         <div className={style.line}>Privacy Policy</div>
                     </div>
-                    <div className={style.nav}>
-                        <div className={style.title}>What we do</div>
-                        <div className={style.line}>Newsand stories</div>
-                        <div className={style.line}>Publications</div>
-                        <div className={style.line}>Take action</div>
-                        <div className={style.line}>Recomendation</div>
-                        <div className={style.line}>Help</div>
-                    </div>
+                    {/*<div className={style.nav}>*/}
+                    {/*    <div className={style.title}>What we do</div>*/}
+                    {/*    <div className={style.line}>Newsand stories</div>*/}
+                    {/*    <div className={style.line}>Publications</div>*/}
+                    {/*    <div className={style.line}>Take action</div>*/}
+                    {/*    <div className={style.line}>Recomendation</div>*/}
+                    {/*    <div className={style.line}>Help</div>*/}
+                    {/*</div>*/}
                 </div>
                 <div className={style.follow}>
-                    <div className={style.title}></div>
+                    <div className={style.title}>Sign Up To Receive</div>
+                    <div className={style.title}>____ Our Newsletter</div>
                     <div className={style.form}>
                         <input type="email" placeholder="Ваш Email"/>
                         <div className={style.btn}><i className="fa-solid fa-check"/></div>
                     </div>
                     <div className={style.us}>
-                        <div className={style.title}></div>
+                        <div className={style.title}>Follow us!</div>
                         <div className={style.icons}>
                             <i className="fa-brands fa-vk"/>
                             <i className="fa-brands fa-telegram"/>

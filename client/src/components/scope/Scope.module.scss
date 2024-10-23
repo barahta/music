@@ -1,0 +1,633 @@
+@media screen and (min-width: 1440px){
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 100px;
+
+    .title {
+      width: 100%;
+      .text {
+        color: #FFF;
+        font-size: 30pt;
+        text-transform: uppercase;
+        margin-left: 150px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .messages {
+      width: calc(100% - 200px);
+      padding: 50px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .line {
+        opacity: 0;
+        transform: translateX(100px); // Начальное состояние для анимации справа
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        color: #FFFFFF;
+        font-size: 26pt;
+
+        &.fromRight {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        &.fromLeft {
+          opacity: 1;
+          transform: translateX(0px); // Вылет слева
+        }
+
+        .icon {
+          width: 30%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 60%;
+          }
+        }
+
+        .textright {
+          width: calc(70% - 60px);
+          min-height: 150px;
+          padding: 30px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .textleft {
+          width: calc(70% - 60px);
+          min-height: 150px;
+          padding: 30px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .fromRight {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fromLeft {
+      opacity: 1;
+      transform: translateX(-100px); // Вылет слева
+    }
+  }
+}
+@media screen and (min-width: 1100px) and (max-width: 1440px){
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+
+    .title {
+      width: 100%;
+      .text {
+        color: #FFF;
+        font-size: 30pt;
+        text-transform: uppercase;
+        margin-left: 150px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .messages {
+      width: calc(100% - 200px);
+      padding: 50px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .line {
+        opacity: 0;
+        transform: translateX(100px); // Начальное состояние для анимации справа
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        color: #FFFFFF;
+        font-size: 16pt;
+
+        &.fromRight {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        &.fromLeft {
+          opacity: 1;
+          transform: translateX(0px); // Вылет слева
+        }
+
+        .icon {
+          width: 30%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 60%;
+          }
+        }
+
+        .textright {
+          width: calc(70% - 60px);
+          min-height: 150px;
+          padding: 30px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .textleft {
+          width: calc(70% - 60px);
+          min-height: 150px;
+          padding: 30px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .fromRight {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fromLeft {
+      opacity: 1;
+      transform: translateX(-100px); // Вылет слева
+    }
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1100px){
+  .main {
+    width: calc(100% - 40px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+
+    .title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .text {
+        color: #FFF;
+        font-size: 30pt;
+        text-transform: uppercase;
+        margin-left: 0px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .messages {
+      width: calc(100% - 60px);
+      padding: 20px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .line {
+        opacity: 0;
+        transform: translateX(100px); // Начальное состояние для анимации справа
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        color: #FFFFFF;
+        font-size: 16pt;
+
+        &.fromRight {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        &.fromLeft {
+          opacity: 1;
+          transform: translateX(0px); // Вылет слева
+        }
+
+        .icon {
+          width: 30%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 60%;
+          }
+        }
+
+        .textright {
+          width: calc(70% - 40px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .textleft {
+          width: calc(70% - 20px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .fromRight {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fromLeft {
+      opacity: 1;
+      transform: translateX(-100px); // Вылет слева
+    }
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 700px){
+  .main {
+    width: calc(100% - 40px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+
+    .title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .text {
+        color: #FFF;
+        font-size: 30pt;
+        text-transform: uppercase;
+        margin-left: 0px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .messages {
+      width: calc(100% - 60px);
+      padding: 20px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .line {
+        opacity: 0;
+        transform: translateX(100px); // Начальное состояние для анимации справа
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        color: #FFFFFF;
+        font-size: 16pt;
+
+        &.fromRight {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        &.fromLeft {
+          opacity: 1;
+          transform: translateX(0px); // Вылет слева
+        }
+
+        .icon {
+          width: 20%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+
+          img {
+            width: 80%;
+          }
+        }
+
+        .textright {
+          width: calc(80% - 40px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .textleft {
+          width: calc(80% - 20px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .fromRight {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fromLeft {
+      opacity: 1;
+      transform: translateX(-100px); // Вылет слева
+    }
+  }
+}
+@media screen and (min-width: 370px) and (max-width: 550px){
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+    @media screen and (min-width: 370px){
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        .text {
+          color: #FFF;
+          font-size: 30pt;
+          text-transform: uppercase;
+          margin-left: 0px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    @media screen and (max-width: 370px){
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        .text {
+          color: #FFF;
+          font-size: 20pt;
+          text-transform: uppercase;
+          margin-left: 0px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+
+
+    .messages {
+      width: calc(100% - 40px);
+      padding: 20px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .line {
+        opacity: 0;
+        transform: translateX(20px); // Начальное состояние для анимации справа
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        color: #FFFFFF;
+        font-size: 16pt;
+
+        &.fromRight {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        &.fromLeft {
+          opacity: 1;
+          transform: translateX(0px); // Вылет слева
+        }
+
+        .icon {
+          width: 20%;
+          height: 100%;
+          display: none;
+          justify-content: center;
+          align-items: flex-start;
+
+          img {
+            width: 80%;
+          }
+        }
+
+        .textright {
+          width: calc(100% - 40px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .textleft {
+          width: calc(100% - 20px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .fromRight {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fromLeft {
+      opacity: 1;
+      transform: translateX(-20px); // Вылет слева
+    }
+  }
+}
+@media screen and (min-width: 100px) and (max-width: 370px){
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+    @media screen and (min-width: 370px){
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        .text {
+          color: #FFF;
+          font-size: 30pt;
+          text-transform: uppercase;
+          margin-left: 0px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    @media screen and (max-width: 370px){
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        .text {
+          color: #FFF;
+          font-size: 20pt;
+          text-transform: uppercase;
+          margin-left: 0px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+
+
+    .messages {
+      width: calc(100% - 20px);
+      padding: 20px 10px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: -20px;
+
+      .line {
+        opacity: 0;
+        transform: translateX(20px); // Начальное состояние для анимации справа
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        color: #FFFFFF;
+        font-size: 12pt;
+
+        &.fromRight {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        &.fromLeft {
+          opacity: 1;
+          transform: translateX(0px); // Вылет слева
+        }
+
+        .icon {
+          width: 20%;
+          height: 100%;
+          display: none;
+          justify-content: center;
+          align-items: flex-start;
+
+          img {
+            width: 80%;
+          }
+        }
+
+        .textright {
+          width: calc(100% - 40px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .textleft {
+          width: calc(100% - 20px);
+          min-height: 150px;
+          padding: 20px;
+          border: 4px solid #FFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .fromRight {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fromLeft {
+      opacity: 1;
+      transform: translateX(-20px); // Вылет слева
+    }
+  }
+}

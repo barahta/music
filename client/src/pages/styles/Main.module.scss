@@ -18,6 +18,9 @@
     background-image: url("../imgs/landback.svg");
     background-size: cover;
     background-position: top center;
+    margin-top: -4px;
+
+
     .container{
       width: 100%;
       max-width: 1920px;
@@ -26,6 +29,7 @@
       background-image: url("../imgs/land.png");
       background-size: cover;
       background-position: top center;
+      margin-top: -2px;
     }
   }
 
