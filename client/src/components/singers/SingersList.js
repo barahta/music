@@ -8,7 +8,7 @@ import AudioStoper from "../players/audio/AudioStoper";
 function SingersList(){
 
     const {sings} = useContext(DataContext)
-    console.log(sings)
+
     const singers = sings
     const companies = [
         {

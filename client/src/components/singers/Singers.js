@@ -17,7 +17,7 @@ function Singers() {
     const sliderRef = useRef(null);
     const titleRef = useRef(null);
     const {sings} = useContext(DataContext)
-    console.log(sings)
+
     const singers = sings
 
     let visibleSlides; // Количество видимых слайдов

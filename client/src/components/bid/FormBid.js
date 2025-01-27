@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import style from './FormBid.module.scss';
 import {useMessage} from "../../hooks/message.hook";
+import NewsService from "../../services/NewsService";
+import {useEffect} from "react";
 
 function FormBid({ setActivemodal, active }) {
     const [email, setEmail] = useState('');
@@ -15,7 +17,10 @@ function FormBid({ setActivemodal, active }) {
     const [socialLinkdont, setSocialLinkdont] = useState(false);
     const [materialLinkdont, setMaterialLinkdont] = useState(false);
     const [plansdont, setPlansdont] = useState(false);
+    const [thisContacts, setThisContacts] = useState([]);
+    const [mailsendler, setMainSendler] = useState('funcoffee@yandex.ru');
     const message = useMessage();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(email.length < 5 && name.length < 2 && releaseName.length < 3 && socialLink.length < 5 && materialLink.length < 5 && plans.length < 5){
@@ -54,28 +59,27 @@ function FormBid({ setActivemodal, active }) {
 
 
                 // Собираем данные в объект
-                const formData = {
-                    email,
-                    name,
-                    releaseName,
-                    socialLink,
-                    materialLink,
-                    plans,
-                };
-
+                // const formData = {
+                //     email,
+                //     name,
+                //     releaseName,
+                //     socialLink,
+                //     materialLink,
+                //     plans,
+                // };
                 try {
-                    // Асинхронная отправка данных на сервер
-                    const response = await fetch('/postamp.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData),
-                    });
+                    const payload = {
+                        email: email,
+                        name: name,
+                        releaseName: releaseName,
+                        socialLink: socialLink,
+                        materialLink: materialLink,
+                        plans: plans,
+                        recipient: mailsendler,
+                    };
+                    const response = await NewsService.sendContactMessage(payload);
 
-                    const result = await response.json(); // Предполагается, что PHP возвращает JSON
-
-                    if (result.success) {
+                    if (response.data) {
                         message('Ваша анкета успешно отправлена, Мы обязательно с ней ознакомимся')
                         // Здесь можно сбросить поля формы, если нужно
                         setEmail('');
@@ -85,16 +89,30 @@ function FormBid({ setActivemodal, active }) {
                         setMaterialLink('');
                         setPlans('');
                         setActivemodal(false)
-                    } else {
-                        message('Что-то пошло не так, попробуйте снова')
                     }
-                } catch (error) {
-                    console.error('Ошибка при отправке формы:', error);
+                } catch (e) {
+                    console.error(e);
                     message('Ошибка отправки, попробуйте снова')
                 }
+
             }
         }
     };
+    const getCities = async () => {
+        try{
+            const {data} = await NewsService.getCities({capter: 'music'})
+            console.log(data)
+            setMainSendler(data[0].email[0])
+            setThisContacts(data)
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        getCities()
+
+    }, [])
 
     return (
         <div className={style.main}>

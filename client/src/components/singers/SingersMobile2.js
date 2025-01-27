@@ -17,7 +17,7 @@ function SingersMobile2() {
     const sliderRef = useRef(null);
     const titleRef = useRef(null);
     const {sings} = useContext(DataContext)
-    console.log(sings)
+
     const singers = sings
 
 

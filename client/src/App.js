@@ -11,6 +11,7 @@ import {observer} from "mobx-react-lite";
 import About from "./pages/About";
 import SingersPage from "./pages/SingersPage";
 import ScopePage from "./pages/ScopePage";
+import Gallery from "./pages/Gallery";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<About />} />
             <Route path="/singers" element={<SingersPage />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/scope" element={<ScopePage />} />
         </Routes>
           <ToastContainer />

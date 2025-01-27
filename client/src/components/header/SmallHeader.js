@@ -30,7 +30,8 @@ function SmallHeader (){
                         </Link>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
                         <Link to='/singers' className={`${style.btn} ${style.right} ${style.down}`}>АРТИСТЫ<div className={style.border}></div></Link>
-                        <Link to='/scope' className={`${style.btn} ${style.left}`}>ВОЗМОЖНОСТИ<div className={style.border}></div></Link>
+                        <Link to='/gallery' className={`${style.btn} ${style.left}`}>ГАЛЕРЕЯ<div className={style.border}></div></Link>
+                        <Link to='/scope' className={`${style.btn} ${style.right}`}>ВОЗМОЖНОСТИ<div className={style.border}></div></Link>
                         {/*<Link to='/vakansii' className={`${style.btn} ${style.right}`}>Вакансии<div className={style.border}></div></Link>*/}
                     </div>
                 </div>
@@ -44,6 +45,7 @@ function SmallHeader (){
                             <Link to='/'><img src="/files/omediamusic.svg" className={style.musiclogo}/></Link>
                             <Link to='/about' className={style.link}>О НАС</Link>
                             <Link to='/singers' className={style.link}>АРТИСТЫ</Link>
+                            <Link to='/gallery' className={style.link}>ГАЛЕРЕЯ</Link>
                             <Link to='/scope' className={style.link}>ВОЗМОЖНОСТИ</Link>
                         </div>
                         <div className={style.burger}>

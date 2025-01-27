@@ -1,0 +1,21 @@
+.main{
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 600px){
+    img{
+      width: auto;
+      height: 100%;
+      z-index: 9999999;
+    }
+  }
+  @media screen and (max-width: 600px){
+    img{
+      width: 100%;
+      height: auto;
+      z-index: 9999999;
+    }
+  }
+}

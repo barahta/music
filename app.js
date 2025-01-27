@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
 const router = require('./routes/index')
 const errorMiddlewere = require('./middlewere/error.middlewere')
+const path = require("path");
 
 app.use(fileUpload({}))
 
@@ -20,6 +21,12 @@ app.use(cookieParser())
 app.use(express.json({ extended: true,limit: '3mb' }))
 app.use(express.urlencoded({ extended: true,limit: '3mb' }))
 app.use('/api', router)
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+// 80.78.253.85
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
 app.use(errorMiddlewere) //Обязательно последний!
 
 const start = async () => {
